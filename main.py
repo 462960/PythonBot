@@ -1,5 +1,11 @@
 from assets import get_asset_balance
 from exchange import get_exchange_rate
+import sys
+
+# The next line turns off Traceback of error message
+# Commenting the line enables Traceback.
+# Other than comment/uncomment options have not been explored
+sys.tracebacklimit = 0
 
 # Get exchange ratio
 STXBTC_ratio = get_exchange_rate()
