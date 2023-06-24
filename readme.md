@@ -1,5 +1,8 @@
 Create credits.py in the root of the project, add two variables 'binance_api_key' and 'binance_api_secret' with your own API credentials for binance.com.
 
+Add three variables 'kucoin_api_key', 'kucoin_api_secret', and
+'kucoin_api_passphrase' for kucoin.com
+
 Prerequisites to run the project:
 1) It's necessary to install Python from python.org
 2) Advised to install development IDE PyCharm from jetbrains.com
