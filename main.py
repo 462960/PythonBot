@@ -1,5 +1,6 @@
 from assets_binance import get_binance_asset
 from exchange_binance import get_binance_exchange_rate
+from exchange_kucoin import get_kucoin_exchange_rate
 import sys
 
 # The next line turns off Traceback of error message
@@ -45,5 +46,10 @@ print(f"Locked assets in STX: {binance_STX_locked}")
 print(f"Total assets in STX: {binance_STX_total}")
 print('')
 print(f"Total assets in BTC: {binance_total_assets}")
+
+# ------------ Kucoin section --------------
+# Get kucoin exchange ratio
+kucoin_STXBTC_ratio = get_kucoin_exchange_rate()
+print(f"Kucoin STX to BTC exchange ratio: {kucoin_STXBTC_ratio}")
 
 
