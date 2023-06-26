@@ -24,5 +24,5 @@ headers = {
     "KC-API-KEY-VERSION": "2"
 }
 response = requests.request('get', url, headers=headers)
-print(response.status_code)
-print(response.json())
+# print(response.status_code)
+print(response.json()['data'])

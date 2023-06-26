@@ -4,7 +4,7 @@ api_url = 'https://api.binance.com/api/v3/ticker/price'
 symbol = 'STXBTC'
 
 
-def get_exchange_rate():
+def get_binance_exchange_rate():
     response = requests.get(api_url, params={'symbol': symbol})
 
     if response.status_code == 200:

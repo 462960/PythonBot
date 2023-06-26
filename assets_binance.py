@@ -8,7 +8,7 @@ from credits import binance_api_secret
 client = Client(binance_api_key, binance_api_secret)
 
 
-def get_asset_balance(asset):
+def get_binance_asset(asset):
     # Retrieve the account balance for a specific asset
     account_info = client.get_account()
     balances = account_info['balances']
