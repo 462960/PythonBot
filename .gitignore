@@ -2,3 +2,4 @@ credits.py
 **/__pycache__
 .idea/workspace.xml
 .idea/tasks.xml
+test_data.py
