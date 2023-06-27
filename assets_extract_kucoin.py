@@ -1,4 +1,5 @@
 from assets_kucoin import get_kucoin_asset
+import threading
 
 # In order to have flexibility to extract any currency type from response
 # we use the editable schema
@@ -10,9 +11,13 @@ schema = [
 ]
 
 api_response = get_kucoin_asset()
+response_ready = threading.Condition()
 
 
 def extract_kucoin_data():
+    with response_ready:
+        while not api_response:
+            response_ready.wait()
     extracted_data = []
     for item in schema:
         currency = item['currency']

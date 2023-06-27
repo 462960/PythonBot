@@ -51,6 +51,9 @@ print(f"Total Binance assets in BTC: {binance_total_assets}")
 # ------------ Kucoin section --------------
 # Get kucoin exchange ratio
 kucoin_STXBTC_ratio = get_kucoin_exchange_rate()
+print('')
+print('Kucoin:')
+print(f"Kucoin STX to BTC exchange ratio: {kucoin_STXBTC_ratio}")
 # Get kucoin assets
 kucoin_assets = extract_kucoin_data()
 # Extract and summarize 'kucoin_BTC_free'
@@ -81,9 +84,7 @@ kucoin_free_assets = kucoin_BTC_free + kucoin_converted_STX_free
 kucoin_locked_assets = kucoin_BTC_locked + kucoin_converted_STX_locked
 # Calculate kucoin total assets in BTC
 kucoin_total_assets = kucoin_free_assets + kucoin_locked_assets
-print('')
-print('Kucoin:')
-print(f"Kucoin STX to BTC exchange ratio: {kucoin_STXBTC_ratio}")
+
 print(f"Free assets in BTC: {kucoin_BTC_free}")
 print(f"Locked assets in BTC: {kucoin_BTC_locked}")
 print(f"All assets in BTC: {kucoin_BTC_total}")
