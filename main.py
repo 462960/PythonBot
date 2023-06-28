@@ -1,5 +1,6 @@
 from assets_binance import get_binance_asset
 from exchange_binance import get_binance_exchange_rate
+from exchange_STXBTC_binance_48 import exchange_STXBTC_binance_48
 from exchange_kucoin import get_kucoin_exchange_rate
 from assets_extract_kucoin import extract_kucoin_data
 import sys
@@ -11,7 +12,7 @@ sys.tracebacklimit = 0
 
 # ------------ Binance section --------------
 # Get binance exchange ratio
-binance_STXBTC_ratio = get_binance_exchange_rate()
+binance_STXBTC_ratio = exchange_STXBTC_binance_48()
 
 # Get binance BTC balance
 binance_btc_balance = get_binance_asset('BTC')
