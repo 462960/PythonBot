@@ -24,7 +24,7 @@ def extract_kucoin_data():
         currency_type = item['type']
         found = False
 
-        for data_item in api_response['data']:
+        for data_item in api_response:
             if data_item['currency'] == currency and data_item['type'] == currency_type:
                 type = data_item['type']
                 free = data_item['available']
