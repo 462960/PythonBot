@@ -1,4 +1,6 @@
-Create credits.py in the root of the project, add two variables 'binance_api_key' and 'binance_api_secret' with your own API credentials for binance.com.
+Create credits.py in the root of the project, add two pairs of variables 'binance_api_key_one/two' and 'binance_api_secret_one/two' with your own API credentials for each account on binance.com.
+
+In credits.py create two variables: 'binance_account_name_one' and 'binance_account_name_two' with desired headers naming for each account. 
 
 Add three variables 'kucoin_api_key', 'kucoin_api_secret', and
 'kucoin_api_passphrase' for kucoin.com

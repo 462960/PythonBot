@@ -1,14 +1,9 @@
 from binance.client import Client
-# Import 'binance_api_key' and 'binance_api_secret' from recently
-# created credits.py file with your own API credentials
-from credits import binance_api_key
-from credits import binance_api_secret
-
-# Create a Binance client
-client = Client(binance_api_key, binance_api_secret)
 
 
-def get_binance_asset(asset):
+def get_binance_asset(binance_api_key, binance_api_secret, asset):
+    # Create a Binance client
+    client = Client(binance_api_key, binance_api_secret)
     # Retrieve the account balance for a specific asset
     account_info = client.get_account()
     balances = account_info['balances']
