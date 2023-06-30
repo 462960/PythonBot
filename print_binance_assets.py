@@ -25,12 +25,12 @@ def print_binance_assets(binance_api_key, binance_api_secret, binance_STXBTC_rat
     binance_account_total_assets = binance_free_assets + binance_locked_assets
 
 
-    print(f"Free assets in BTC: {binance_BTC_free}")
-    print(f"Locked assets in BTC: {binance_BTC_locked}")
-    print(f"All assets in BTC: {binance_BTC_total}")
+    print(f"Free assets in BTC: {binance_BTC_free:.3f}")
+    print(f"Locked assets in BTC: {binance_BTC_locked:.3f}")
+    print(f"All assets in BTC: {binance_BTC_total:.3f}")
 
-    print(f"Free assets in STX: {binance_STX_free}")
-    print(f"Locked assets in STX: {binance_STX_locked}")
-    print(f"All assets in STX: {binance_STX_total}")
+    print(f"Free assets in STX: {binance_STX_free:.3f}")
+    print(f"Locked assets in STX: {binance_STX_locked:.3f}")
+    print(f"All assets in STX: {binance_STX_total:.3f}")
     return binance_account_total_assets
 

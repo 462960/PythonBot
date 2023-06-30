@@ -2,8 +2,8 @@ Create credits.py in the root of the project, add two pairs of variables 'binanc
 
 In credits.py create two variables: 'binance_account_name_one' and 'binance_account_name_two' with desired headers naming for each account. 
 
-Add three variables 'kucoin_api_key', 'kucoin_api_secret', and
-'kucoin_api_passphrase' for kucoin.com
+Add three pairs of variables 'kucoin_api_key_one/two', 'kucoin_api_secret_one/two', and
+'kucoin_api_passphrase_one/two' for kucoin.com
 
 Prerequisites to run the project:
 1) It's necessary to install Python from python.org

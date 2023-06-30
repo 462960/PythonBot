@@ -49,8 +49,7 @@ print(f'{binance_account_name_two}')
 binance_account_total_assets_two = print_binance_assets(binance_api_key_two, binance_api_secret_two, binance_STXBTC_ratio)
 binance_total_assets = binance_account_total_assets_one + binance_account_total_assets_two
 print('')
-binance_formatted_number = f"{binance_total_assets:.3f}"
-print(f"Total Binance assets in BTC: {binance_formatted_number}")
+print(f"Total Binance assets in BTC: {binance_total_assets:.3f}")
 
 # ------------ Kucoin section --------------
 # Get kucoin exchange ratio
@@ -64,13 +63,11 @@ print(f'{kucoin_account_name_two}')
 kucoin_account_total_assets_two = print_kucoin_assets(kucoin_api_key_two, kucoin_api_secret_two, kucoin_api_passphrase_two, binance_STXBTC_ratio)
 kucoin_total_assets = kucoin_account_total_assets_one + kucoin_account_total_assets_two
 print('')
-kucoin_formatted_number = f"{kucoin_total_assets:.3f}"
-print(f"Total Kucoin assets in BTC: {kucoin_formatted_number}")
+print(f"Total Kucoin assets in BTC: {kucoin_total_assets:.3f}")
 
 # ------- Summarise all assets from all resources --------------
 all_assets = binance_total_assets + kucoin_total_assets
 print('')
-all_assets_formatted_number = f"{all_assets:.3f}"
-print(f"All assets in BTC: {all_assets_formatted_number}")
+print(f"All assets in BTC: {all_assets:.3f}")
 
 

@@ -32,11 +32,11 @@ def print_kucoin_assets(kucoin_api_key, kucoin_api_secret, kucoin_api_passphrase
     # Calculate kucoin total assets in BTC
     kucoin_account_total_assets = kucoin_free_assets + kucoin_locked_assets
 
-    print(f"Free assets in BTC: {kucoin_BTC_free}")
-    print(f"Locked assets in BTC: {kucoin_BTC_locked}")
-    print(f"All assets in BTC: {kucoin_BTC_total}")
+    print(f"Free assets in BTC: {kucoin_BTC_free:.3f}")
+    print(f"Locked assets in BTC: {kucoin_BTC_locked:.3f}")
+    print(f"All assets in BTC: {kucoin_BTC_total:.3f}")
 
-    print(f"Free assets in STX: {kucoin_STX_free}")
-    print(f"Locked assets in STX: {kucoin_STX_locked}")
-    print(f"All assets in STX: {kucoin_STX_total}")
+    print(f"Free assets in STX: {kucoin_STX_free:.3f}")
+    print(f"Locked assets in STX: {kucoin_STX_locked:.3f}")
+    print(f"All assets in STX: {kucoin_STX_total:.3f}")
     return kucoin_account_total_assets
