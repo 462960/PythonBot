@@ -1,8 +1,8 @@
 from assets_extract_kucoin import extract_kucoin_data
 
-def print_kucoin_assets(binance_STXBTC_ratio):
+def print_kucoin_assets(kucoin_api_key, kucoin_api_secret, kucoin_api_passphrase, binance_STXBTC_ratio):
     # Get kucoin assets
-    kucoin_assets = extract_kucoin_data()
+    kucoin_assets = extract_kucoin_data(kucoin_api_key, kucoin_api_secret, kucoin_api_passphrase)
     # Extract and summarize 'kucoin_BTC_free'
     kucoin_BTC_free_values = [item.get('kucoin_BTC_free', 0) for item in kucoin_assets]
     kucoin_BTC_free = sum(kucoin_BTC_free_values)

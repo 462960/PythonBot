@@ -10,11 +10,11 @@ schema = [
     {'currency': 'STX', 'type': 'trade'},
 ]
 
-api_response = get_kucoin_asset()
 response_ready = threading.Condition()
 
 
-def extract_kucoin_data():
+def extract_kucoin_data(kucoin_api_key, kucoin_api_secret, kucoin_api_passphrase):
+    api_response = get_kucoin_asset(kucoin_api_key, kucoin_api_secret, kucoin_api_passphrase)
     with response_ready:
         while not api_response:
             response_ready.wait()

@@ -3,16 +3,11 @@ import base64
 import hmac
 import requests
 import hashlib
-# Import 'kucoin_api_key', 'kucoin_api_secret', and 'kucoin_api_passphrase' from recently
-# created credits.py file with your own API credentials
-from credits import kucoin_api_key
-from credits import kucoin_api_secret
-from credits import kucoin_api_passphrase
 
 api_url = 'https://api.kucoin.com/api/v1/accounts'
 
 
-def get_kucoin_asset():
+def get_kucoin_asset(kucoin_api_key, kucoin_api_secret, kucoin_api_passphrase):
     now = int(time.time() * 1000)
     str_to_sign = str(now) + 'GET' + '/api/v1/accounts'
     signature = base64.b64encode(
