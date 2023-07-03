@@ -17,10 +17,11 @@ def get_assets_okcoin():
 
     # Generate signature
     timestamp = str(int(time.time() * 1000))
+
     sign = timestamp + 'GET' + endpoint
     secret_key = base64.b64decode(okcoin_api_secret)
     signature = hmac.new(secret_key, sign.encode(), hashlib.sha256).hexdigest()
-
+    print(f'OKcoin timestamp: {timestamp}')
     headers = {
         'OK-ACCESS-KEY': okcoin_api_key,
         'OK-ACCESS-SIGN': signature,
