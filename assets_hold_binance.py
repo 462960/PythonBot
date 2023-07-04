@@ -28,10 +28,17 @@ def get_on_hold_deposits():
     try:
         response = requests.get(url, headers=headers)
         response.raise_for_status()
-        return response.json()
+        res = response.json()
+        amount = float(extract_amount(res))
+        return amount
     except requests.exceptions.RequestException as e:
         print("Error occurred:", str(e))
 
+def extract_amount(arr):
+    if arr:
+        if isinstance(arr[0], dict) and 'amount' in arr[0]:
+            return arr[0]['amount']
+    return 0
 
 # Call the function to get the on-hold deposits
 on_hold_deposits = get_on_hold_deposits()
