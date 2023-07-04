@@ -4,6 +4,8 @@ import hashlib
 from urllib.parse import urlencode
 import requests
 
+from credits import binance_api_key_one
+from credits import binance_api_secret_one
 def get_on_hold_deposits(binance_api_key, binance_api_secret):
     base_url = "https://api.binance.com"
     endpoint = "/sapi/v1/capital/deposit/hisrec"
@@ -36,3 +38,6 @@ def extract_amount(arr):
             return arr[0]['amount']
     return 0
 
+# Call the function to get the on-hold deposits
+on_hold_deposits = get_on_hold_deposits(binance_api_key_one, binance_api_secret_one)
+print(f'Print from assets_hold_binance: {on_hold_deposits}')
