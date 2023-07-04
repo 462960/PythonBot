@@ -1,6 +1,9 @@
 from assets_binance import get_binance_asset
+from assets_hold_binance import get_on_hold_deposits
 
 def print_binance_assets(binance_api_key, binance_api_secret, binance_STXBTC_ratio):
+    # Get STX deposit on_hold
+    deposit_STX_on_hold = get_on_hold_deposits(binance_api_key, binance_api_secret)
     # Get binance BTC balance
     binance_btc_balance = get_binance_asset(binance_api_key, binance_api_secret, 'BTC')
     binance_BTC_free = binance_btc_balance['BTC_free']
@@ -10,7 +13,7 @@ def print_binance_assets(binance_api_key, binance_api_secret, binance_STXBTC_rat
     # Get binance STX balance
     binance_stx_balance = get_binance_asset(binance_api_key, binance_api_secret, 'STX')
     binance_STX_free = binance_stx_balance['STX_free']
-    binance_STX_locked = binance_stx_balance['STX_locked']
+    binance_STX_locked = binance_stx_balance['STX_locked'] + deposit_STX_on_hold
     binance_STX_total = binance_STX_free + binance_STX_locked
 
     # Calculate binance STX balance in BTC
