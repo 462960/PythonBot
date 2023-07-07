@@ -6,10 +6,10 @@ import hashlib
 
 api_url = 'https://api.kucoin.com/api/v1/accounts'
 
-
 def get_kucoin_asset(kucoin_api_key, kucoin_api_secret, kucoin_api_passphrase):
     now = int(time.time() * 1000)
     str_to_sign = str(now) + 'GET' + '/api/v1/accounts'
+
     signature = base64.b64encode(
         hmac.new(kucoin_api_secret.encode('utf-8'), str_to_sign.encode('utf-8'), hashlib.sha256).digest())
     passphrase = base64.b64encode(
@@ -24,3 +24,10 @@ def get_kucoin_asset(kucoin_api_key, kucoin_api_secret, kucoin_api_passphrase):
     response = requests.request('get', api_url, headers=headers)
     return response.json()['data']
 
+# Testing.
+from credits import kucoin_api_key_one
+from credits import kucoin_api_secret_one
+from credits import kucoin_api_passphrase_one
+
+book = get_kucoin_asset(kucoin_api_key_one, kucoin_api_secret_one, kucoin_api_passphrase_one)
+print(book)
